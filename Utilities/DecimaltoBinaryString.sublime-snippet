@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+
+str decToBinary(ll n){
+    str binaryNum;
+    ll i = 0;
+    while (n > 0) {
+        binaryNum.pb(n % 2 + '0');
+        n = n / 2;
+        i++;
+    }
+    reverse(all(binaryNum));
+    return binaryNum; 
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>decimaltobinary</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
