@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+
+vll takeUnkownInput(){
+    vll v;
+    string s;
+    ll data;
+    getline(cin, s);
+    istringstream iss(s);
+    while (iss >> data)
+          v.push_back(data);
+
+    return v;
+}
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>unknownInput</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
