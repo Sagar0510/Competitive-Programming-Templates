@@ -1,0 +1,25 @@
+
+vll adj[N];
+bool visited[N];
+ll inn[N],low[N],timer,child;
+
+void dfs(ll u, ll p) {
+    visited[u] = 1;
+    inn[u]=low[u]=timer++; 
+    child=0;
+    for (ll v : adj[u]) {
+        if (v==p) continue;
+        if (visited[v]) low[u]=min(low[u],inn[v]);
+        else{
+            dfs(v,u);
+            low[u]=min(low[u],low[v]);
+            child++;
+            if(low[v]>inn[u])
+            // u -- v is a bridge;
+            if(low[v]>=inn[u] and p!=-1)
+            // u is an articulation point
+        }
+    } 
+    if(p==-1 and child>1)
+    // u is an articulation point  
+}
