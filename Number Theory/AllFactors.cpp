@@ -1,6 +1,7 @@
-vll factors(ll x) {
-    vll result;
-    ll i = 1;
+
+vector<int> factors(int x) {
+    vector<int> result;
+    int i = 1;
     while(i*i <= x) {
         if(x % i == 0) {
             result.pb(i);

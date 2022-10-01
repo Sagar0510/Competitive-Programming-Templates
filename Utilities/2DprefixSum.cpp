@@ -1,6 +1,6 @@
 
-vector<vector<ll>> prefixSum2D(ll n,ll m,vector<vll>& a) {
-    vector<vll> psa(n,vll (m));
+vector<vector<int>> prefixSum2D(int n,int m,vector<vector<int>>& a) {
+    vector<vector<int>> psa(n,vector<int> (m));
     psa[0][0] = a[0][0];
   
     for (int i = 1; i < m; i++)

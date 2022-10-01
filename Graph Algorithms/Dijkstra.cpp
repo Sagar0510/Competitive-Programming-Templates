@@ -1,9 +1,10 @@
-vpl adj[N];
-vll dist(N,INF);
+
+vector<pair<int,int> > adj[N];
+vector<int> dist(N,INF);
 
 
-void dijkstra(ll s) {
-    priority_queue<pair<ll,ll>, vector<pair<ll,ll>>, greater<pair<ll,ll>>> pq;
+void dijkstra(int s) {
+    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
     dist[s] = 0; pq.push({0, s});
     while (pq.size()) {
         auto [d, u] = pq.top(); pq.pop();
@@ -16,5 +17,4 @@ void dijkstra(ll s) {
         }
     } 
 }
-
 

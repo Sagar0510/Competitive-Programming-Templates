@@ -1,24 +1,24 @@
 
-ll n,m;
+int n,m;
 char matrix[N][N]; 
 bool visited[N][N];
-ll dist[N][N];
-ll dx[]={-1,0,1,0};
-ll dy[]={0,1,0,-1};
+int dist[N][N];
+int dx[]={-1,0,1,0};
+int dy[]={0,1,0,-1};
  
-bool valid(ll x,ll y){
+bool valid(int x,int y){
   if(x<1||x>n||y<1||y>m) return false;
   if(visited[x][y]) return false;
   return true;
 }
  
-void bfs(ll x,ll y) {
-    queue<pair<ll,ll>> q;
+void bfs(int x,int y) {
+    queue<pair<int,int>> q;
     visited[x][y]=1;
     dist[x][y] = 0; q.push({x,y});
     while (q.size()) {
-        ll xx = q.front().ff;
-        ll yy = q.front().ss;
+        int xx = q.front().ff;
+        int yy = q.front().ss;
         q.pop();
         
         rep(i,0,4) {

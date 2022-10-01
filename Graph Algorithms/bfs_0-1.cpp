@@ -1,12 +1,13 @@
-vector<pair<ll,ll>> adj[N];
-vector<ll> dist;
 
-void bfs(ll s,ll n) {
+vector<pair<int,int>> adj[N];
+vector<int> dist;
+
+void bfs(int s,int n) {
     dist.assign(n + 1, -1);
-    deque<ll> q;
+    deque<int> q;
     dist[s] = 0; q.push_front(s);
     while (q.size()) {
-        ll u = q.front(); q.pop_front();
+        int u = q.front(); q.pop_front();
         for (auto [v, w] : adj[u]) {
             if (dist[v] == -1) {
                 dist[v] = dist[u] + w;
@@ -16,5 +17,4 @@ void bfs(ll s,ll n) {
         }
     }
 }
-
 

@@ -1,13 +1,13 @@
 
-vll adj[N];
+vector<int> adj[N];
 bool visited[N];
-ll inn[N],low[N],timer,child;
+int inn[N],low[N],timer;
 
-void dfs(ll u, ll p) {
+void dfs(int u, int p) {
     visited[u] = 1;
     inn[u]=low[u]=timer++; 
-    child=0;
-    for (ll v : adj[u]) {
+    int child=0;
+    for (int v : adj[u]) {
         if (v==p) continue;
         if (visited[v]) low[u]=min(low[u],inn[v]);
         else{
@@ -19,7 +19,8 @@ void dfs(ll u, ll p) {
             if(low[v]>=inn[u] and p!=-1)
             // u is an articulation point
         }
-    } 
+    }
     if(p==-1 and child>1)
     // u is an articulation point  
 }
+

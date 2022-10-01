@@ -1,4 +1,4 @@
-bool isPowerOfTwo(ll n)
+bool isPowerOfTwo(int n)
 {
    if(n==0)
    return false;

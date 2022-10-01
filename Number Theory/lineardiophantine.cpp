@@ -1,12 +1,12 @@
-ll exteuclid(ll a, ll b, ll &x, ll &y) {
+int exteuclid(int a, int b, int &x, int &y) {
     if (b == 0) {x = 1, y = 0; return a;}
-    ll x1, y1, d = exteuclid(b, a % b, x1, y1);
+    int x1, y1, d = exteuclid(b, a % b, x1, y1);
     x = y1;
     y = x1 - y1 * (a / b);
     return d;
 }
-bool lde(ll a, ll b, ll c, ll &x, ll &y) {
-    ll d = exteuclid(abs(a), abs(b), x, y);
+bool lde(int a, int b, int c, int &x, int &y) {
+    int d = exteuclid(abs(a), abs(b), x, y);
     if (c % d) return false; 
     x *= c / d; 
     y *= c / d;

@@ -2,11 +2,11 @@
 struct node
 {
     //**1
-    ll sum = 0;
+    int sum = 0;
     // use more variables according to the things you want from each node in segtree
     // these default values should be identity_element
     node(){}
-    node(ll val){
+    node(int val){
         //**2
         sum = val;
         // constructor, what each value in LEAF should store
@@ -23,11 +23,11 @@ struct node
 struct update
 {
     // **4
-    ll v = 0; 
+    int v = 0; 
     // use more variables if you want more things to update, for eg intead of v, we might want to add a sequence or AP on the range
     // these default values should be identity_transformation
     update(){}
-    update(ll val){
+    update(int val){
         //**5
         v = val;
         //initialising update values
@@ -50,13 +50,13 @@ struct update
 template<typename node,typename update>
 struct segtree
 {
-    ll len;
+    int len;
     vector<node> t;
     vector<update> u;
     vector<bool> lazy;
     node identity_element;
     update identity_transformation;
-    segtree(ll l){
+    segtree(int l){
         len = l;
         t.resize(4 * len);
         u.resize(4 * len);
@@ -108,7 +108,6 @@ struct segtree
         return ans;
     }
  
-    // rupd = range update
     void rupd(const int32_t &v,const int32_t &tl,const int32_t &tr,const int32_t &l,const int32_t &r,const update &upd){
         if(l > tr || r < tl){
             return;

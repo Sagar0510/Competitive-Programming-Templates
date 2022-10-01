@@ -1,5 +1,6 @@
-vll takeUnkownInput(){
-    vll v;
+
+vector<int> takeUnkownInput(){
+    vector<int> v;
     string s;
     ll data;
     getline(cin, s);

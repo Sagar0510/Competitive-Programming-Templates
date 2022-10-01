@@ -1,10 +1,11 @@
-vpl adj[N];
 
-ll prims(ll n){
-    priority_queue<pair<ll,pair<ll,ll>>,vector<pair<ll,pair<ll,ll>>>, greater<pair<ll,pair<ll,ll>>>> pq;
+vector<pair<int,int> > adj[N];
+
+int prims(int n){
+    priority_queue<pair<int,pair<int,int>>,vector<pair<int,pair<int,int>>>, greater<pair<int,pair<int,int>>>> pq;
     bool visited[n+1]={0};
     visited[1]=1;
-    ll ans=0;
+    int ans=0;
 
     for(auto x:adj[1]) pq.push({x.ss,{x.ff,1}});
 
@@ -23,4 +24,3 @@ ll prims(ll n){
             return -1;
     return ans;
 }
-

@@ -4,23 +4,21 @@
 // #pragma GCC optimization("unroll-loops")
 #include<bits/stdc++.h>
 using namespace std;
-#define ll                   long long 
+#define int                  long long 
 #define ld                   long double 
-#define abs(a,b)             (ll) abs(a-b)
-#define rep(i,a,b)           for(ll i=a;i<b;i++) 
-#define repr(i,a,b)          for(ll i=a;i>=b;i--)
-#define vll                  vector<long long>
-#define vvll                 vector<vector<long long> >
-#define vpl                  vector<pair<ll,ll> >
-#define pll                  pair<ll,ll> 
-#define sll                  set<long long>
-#define msll                 multiset<long long>
-#define mll                  map<ll,ll>
+#define rep(i,a,b)           for(int i=a;i<b;i++) 
+#define repr(i,a,b)          for(int i=a;i>=b;i--)
+#define vll                  vector<int>
+#define vvll                 vector<vector<int> >
+#define pll                  pair<int,int> 
+#define vpl                  vector<pair<int,int> >
+#define sll                  set<int>
+#define msll                 multiset<int>
+#define mll                  map<int,int>
 #define all(x)               x.begin(),x.end()
 #define rall(x)              x.rbegin(),x.rend()
 #define in(v)                for(auto &x:v) cin>>x;
 #define out(v)               for(auto &x:v) {cout<<x<<" ";} cout<<'\n';
-#define str                  string
 #define pb                   push_back
 #define ins                  insert
 #define lb                   lower_bound
@@ -46,9 +44,9 @@ using namespace std;
 #endif
 
 
-const ll mod = 1e9+7;
-const ll N = 3e5+1;
-const ll INF = 1e18;
+const int mod = 1e9+7;
+const int N = 3e5+1;
+const int INF = 1e18;
 
 
 void solve(){
@@ -60,11 +58,10 @@ void solve(){
 int main(){
     ios_base::sync_with_stdio;
     cin.tie(NULL);cout.tie(0);
-    ll t=1;
+    int t=1;
     cin>>t;
     while(t--) 
         solve();
 
     return 0;
 }
-

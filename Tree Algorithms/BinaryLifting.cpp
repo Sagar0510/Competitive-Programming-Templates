@@ -1,27 +1,28 @@
+
 struct BinaryLifting {
-    ll n;
-    ll maxLog;
-    ll maxRequirement;
-    vector<vector<ll>> parent;
-    BinaryLifting(ll n1, vector<ll> *edges, ll requirement, ll root) {
+    int n;
+    int maxLog;
+    int maxRequirement;
+    vector<vector<int>> parent;
+    BinaryLifting(int n1, vector<int> *edges, int requirement, int root) {
         n = n1;
         parent.resize(n1+1);  //1 based nodes
         maxLog = log2(requirement + 1);
         maxRequirement = requirement;
-        for (ll i = 0; i <= n ; i++) {
+        for (int i = 0; i <= n ; i++) {
             parent[i].resize(maxLog + 1);
-            for (ll j = 0; j <= maxLog; j++) {
+            for (int j = 0; j <= maxLog; j++) {
                 parent[i][j] = -1;
             }
         }
         fillParentTable(root, edges);
     }
-    void fillParentTable(ll root, vector<ll> *edges) {
+    void fillParentTable(int root, vector<int> *edges) {
         vector<bool> visited(n+1);
         dfsBinaryLifting(root, edges, visited);
-        ll intermediate = -1;
-        for (ll i = 1; i <= maxLog; i++) {
-            for (ll j = 0; j <= n; j++) {
+        int intermediate = -1;
+        for (int i = 1; i <= maxLog; i++) {
+            for (int j = 0; j <= n; j++) {
                 intermediate = parent[j][i - 1];
                 if (intermediate != -1) {
                     parent[j][i] = parent[intermediate][i - 1];
@@ -29,7 +30,7 @@ struct BinaryLifting {
             }
         }
     }
-    void dfsBinaryLifting(ll root, vector<ll> *edges, vector<bool> &visited) {
+    void dfsBinaryLifting(int root, vector<int> *edges, vector<bool> &visited) {
         visited[root] = true;
         for (auto i : edges[root]) {
             if (!visited[i]) {
@@ -38,8 +39,8 @@ struct BinaryLifting {
             }
         }
     }
-    ll kthParent(ll x, ll k) {
-        for(ll i = 0; i <= maxLog; i++){
+    int kthParent(int x, int k) {
+        for(int i = 0; i <= maxLog; i++){
             if((k >> i) & 1){ 
                 if(x == -1)
                     return x;
